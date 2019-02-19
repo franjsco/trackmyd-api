@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./config');
+const apiRoutes = require('./apiRoutes');
 
 const { db } = config;
 const app = express();
@@ -16,9 +17,11 @@ mongoose.set('useFindAndModify', false);
 
 const mongodb = mongoose.connection;
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use('/api', apiRoutes);
+
 app.listen(port, () => {
-    console.log(`trackmyd-api running. PORT: ${port}`);
+  console.log(`trackmyd-api running. PORT: ${port}`);
 });
