@@ -1,0 +1,25 @@
+{
+  "name": "trackmyd-api",
+  "version": "1.0.0",
+  "description": "trackmyd API",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frab1t/trackmyd-api.git"
+  },
+  "author": "frab1t",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/frab1t/trackmyd-api/issues"
+  },
+  "homepage": "https://github.com/frab1t/trackmyd-api#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
