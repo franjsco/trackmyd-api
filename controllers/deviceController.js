@@ -10,4 +10,15 @@ function index(req, res) {
   });
 }
 
+function view(req, res) {
+  Device.findById(req.params.deviceId)
+    .then((device) => {
+      res.json(device);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+}
+
 module.exports.index = index;
+module.exports.view = view;

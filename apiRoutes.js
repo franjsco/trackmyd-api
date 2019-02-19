@@ -7,4 +7,8 @@ router
   .route('/devices')
   .get(deviceController.index);
 
+router
+  .route('/devices/:deviceId')
+  .get(deviceController.view);
+
 module.exports = router;
