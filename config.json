@@ -1,0 +1,22 @@
+{
+  "app": {
+    "name": "trackmyd-api",
+    "auth": {
+      "secret": "mysecret"
+    },
+    "port": 3500
+  },
+  "db": {
+    "prefix": "mongodb://",
+    "host": "host:49754",
+    "user": "user",
+    "password": "passwd",
+    "database": "db"
+  },
+  "logger": {
+    "errorLogging": {
+      "filename": "error.log",
+      "level": "error"
+    }
+  }
+}
