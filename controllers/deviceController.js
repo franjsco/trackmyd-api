@@ -1,13 +1,23 @@
 const Device = require('../models/deviceModel');
 
 function index(req, res) {
-  Device.get((err, devices) => {
-    if (err) {
-      res.status(500).send();
-    }
-
-    res.json(devices);
-  });
+  if (req.query.name) {
+    console.log(req.query.name);
+    Device.findOne({ name: req.query.name }, (err, device) => {
+      if (!device) {
+        res.status(404).send();
+      } else {
+        res.json(device);
+      }
+    });
+  } else {
+    Device.get((err, devices) => {
+      if (err) {
+        res.status(500).send();
+      }
+      res.json(devices);
+    });
+  }
 }
 
 function view(req, res) {
@@ -29,6 +39,18 @@ function update(req, res) {
   });
 }
 
+function add(req, res) {
+  const device = new Device(req.body);
+  device
+    .save()
+    .then((item) => {
+      res.status(201).json(item);
+    })
+    .catch((err) => {
+      res.status(500).send();
+    });
+}
+
 function remove(req, res) {
   Device.deleteOne({ _id: req.params.deviceId }, (err) => {
     if (err) {
@@ -41,4 +63,5 @@ function remove(req, res) {
 module.exports.index = index;
 module.exports.view = view;
 module.exports.update = update;
+module.exports.add = add;
 module.exports.remove = remove;

@@ -5,7 +5,8 @@ const router = express.Router();
 
 router
   .route('/devices')
-  .get(deviceController.index);
+  .get(deviceController.index)
+  .post(deviceController.add);
 
 router
   .route('/devices/:deviceId')
