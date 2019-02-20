@@ -11,6 +11,7 @@ router
   .route('/devices/:deviceId')
   .get(deviceController.view)
   .put(deviceController.update)
-  .patch(deviceController.update);
+  .patch(deviceController.update)
+  .delete(deviceController.remove);
 
 module.exports = router;

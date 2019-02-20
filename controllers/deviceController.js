@@ -29,6 +29,16 @@ function update(req, res) {
   });
 }
 
+function remove(req, res) {
+  Device.deleteOne({ _id: req.params.deviceId }, (err) => {
+    if (err) {
+      res.status(500).send();
+    }
+    res.status(200).send();
+  });
+}
+
 module.exports.index = index;
 module.exports.view = view;
 module.exports.update = update;
+module.exports.remove = remove;
