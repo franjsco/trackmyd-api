@@ -2,7 +2,10 @@
   "app": {
     "name": "trackmyd-api",
     "auth": {
-      "secret": "mysecret"
+      "users": {
+        "client1": "client1",
+        "client2": "client2"
+      }
     },
     "port": 3500
   },

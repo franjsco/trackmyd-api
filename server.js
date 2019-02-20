@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const basicAuth = require('express-basic-auth');
 const config = require('./config');
 const logger = require('./logger');
 const apiRoutes = require('./apiRoutes');
+
 
 const { db } = config;
 const app = express();
@@ -16,6 +18,7 @@ mongoose.set('useFindAndModify', false);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(basicAuth({ users: config.app.auth.users }));
 
 app.use('/api', apiRoutes);
 
