@@ -6,7 +6,6 @@ const config = require('./config');
 const logger = require('./logger');
 const apiRoutes = require('./apiRoutes');
 
-
 const { db } = config;
 const app = express();
 const port = process.env.PORT || config.app.port;
@@ -16,9 +15,16 @@ const connectionString = `${db.prefix}${db.user}:${db.password}@${db.host}/${db.
 mongoose.connect(connectionString, { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
 
+app.use((err, req, res, next) => {
+  logger.logError(err);
+  res.status(500);
+  next();
+});
+
+app.use(basicAuth({ users: config.app.auth.users }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(basicAuth({ users: config.app.auth.users }));
 
 app.use('/api', apiRoutes);
 
