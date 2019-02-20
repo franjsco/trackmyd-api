@@ -9,6 +9,8 @@ router
 
 router
   .route('/devices/:deviceId')
-  .get(deviceController.view);
+  .get(deviceController.view)
+  .put(deviceController.update)
+  .patch(deviceController.update);
 
 module.exports = router;

@@ -20,5 +20,15 @@ function view(req, res) {
     });
 }
 
+function update(req, res) {
+  Device.findOneAndUpdate({ _id: req.params.deviceId }, req.body, (err) => {
+    if (err) {
+      res.status(500).send();
+    }
+    res.status(200).send();
+  });
+}
+
 module.exports.index = index;
 module.exports.view = view;
+module.exports.update = update;
