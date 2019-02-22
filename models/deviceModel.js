@@ -47,7 +47,3 @@ const deviceSchema = mongoose.Schema(device, {
 const Device = mongoose.model('device', deviceSchema);
 
 module.exports = Device;
-
-module.exports.get = (callback, limit) => {
-  Device.find(callback).limit(limit);
-};
