@@ -11,10 +11,14 @@ function index(req, res) {
       return res.json(device);
     });
   } else {
-    Device.get((err, devices) => {
+    Device.find({}, (err, devices) => {
       if (err) {
         logger.logError(`index: ${err}`);
         return res.status(500).send();
+      }
+
+      if (devices.length === 0) {
+        return res.status(404).send();
       }
       return res.json(devices);
     });
