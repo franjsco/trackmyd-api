@@ -27,7 +27,7 @@ A simple REST API for trackmyd.
 2. Install **Mongodb**.
 2. Clone this repository.
 3. Install dependencies with `npm install`.
-6. Configure **users** (app.auth.users) basic authentication into `config.json`.
+6. Configure **users** (app.auth.users) for basic authentication into `config.json`.
 7. Configure database (db) into `config.json`.
 8. Start with `npm start`.
 
