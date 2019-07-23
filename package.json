@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frab1t/trackmyd-api.git"
+    "url": "git+https://github.com/frsposito/trackmyd-api.git"
   },
-  "author": "frab1t",
+  "author": "frsposito",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/frab1t/trackmyd-api/issues"
+    "url": "https://github.com/frsposito/trackmyd-api/issues"
   },
-  "homepage": "https://github.com/frab1t/trackmyd-api#readme",
+  "homepage": "https://github.com/frsposito/trackmyd-api#readme",
   "devDependencies": {
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
