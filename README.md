@@ -29,4 +29,6 @@ A simple REST API for trackmyd.
 6. Configure database (db) into `config.json`.
 7. Start with `npm start`.
 
+---
+
 Made with ❤️ by Francesco Esposito ([@frsposito](https://github.com/frsposito))
