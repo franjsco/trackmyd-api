@@ -26,7 +26,7 @@
     "body-parser": "^1.18.3",
     "bunyan": "^1.8.12",
     "express": "^4.16.4",
-    "express-basic-auth": "^1.1.6",
+    "express-basic-auth": "^1.1.7",
     "mongoose": "^5.7.5"
   }
 }
